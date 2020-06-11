@@ -35,4 +35,3 @@ for line in $content ; do
 done
 
 sed -i 's/REAL_PASSWD/****/g' $NEW_FILE
-#с точки зрения безопасности REAL_PASSWD надо-бы читать из фаила или из пользовательского ввода при запуске.
