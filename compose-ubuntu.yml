@@ -1,0 +1,13 @@
+---
+- hosts: test
+  become: true
+  tasks:
+    - name: Install Docker Compose from apt
+      apt: name=mc state=latest update_cache=yes force_apt_get=yes
+      register: installdc
+      retries: 5
+      ignore_errors: yes
+
+    - name: Debug Docker Compose from apt
+      debug:
+        msg: "{{ installdc }}"
